@@ -1,0 +1,38 @@
+server:
+  port: 8080
+  session-timeout: 30
+  tomcat.max-threads: 0
+  tomcat.uri-encoding: UTF-8
+
+spring:
+  datasource:
+    url : jdbc:mysql://localhost:3306/db_servicios
+    username : root
+    password : root
+    driverClassName : com.mysql.jdbc.Driver
+  jpa:
+    database : MYSQL
+    show-sql : true
+    hibernate:
+      ddl-auto : update
+      naming-strategy : org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect : org.hibernate.dialect.MySQL5Dialect
+  mail:
+    host: localhost
+    port: 1025
+    username: hello
+    password: hello
+
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
